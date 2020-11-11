@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		496F1674255B8A97009C2CB3 /* Fractal_FunApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F1673255B8A97009C2CB3 /* Fractal_FunApp.swift */; };
+		496F1676255B8A97009C2CB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F1675255B8A97009C2CB3 /* ContentView.swift */; };
+		496F1678255B8A98009C2CB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496F1677255B8A98009C2CB3 /* Assets.xcassets */; };
+		496F167B255B8A98009C2CB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496F167A255B8A98009C2CB3 /* Preview Assets.xcassets */; };
+		496F1686255B8A99009C2CB3 /* Fractal_FunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F1685255B8A99009C2CB3 /* Fractal_FunTests.swift */; };
+		496F1691255B8A99009C2CB3 /* Fractal_FunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F1690255B8A99009C2CB3 /* Fractal_FunUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		496F1682255B8A99009C2CB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 496F1668255B8A97009C2CB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 496F166F255B8A97009C2CB3;
+			remoteInfo = "Fractal Fun";
+		};
+		496F168D255B8A99009C2CB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 496F1668255B8A97009C2CB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 496F166F255B8A97009C2CB3;
+			remoteInfo = "Fractal Fun";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		496F1670255B8A97009C2CB3 /* Fractal Fun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fractal Fun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		496F1673255B8A97009C2CB3 /* Fractal_FunApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fractal_FunApp.swift; sourceTree = "<group>"; };
+		496F1675255B8A97009C2CB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		496F1677255B8A98009C2CB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		496F167A255B8A98009C2CB3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		496F167C255B8A98009C2CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		496F1681255B8A99009C2CB3 /* Fractal FunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fractal FunTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		496F1685255B8A99009C2CB3 /* Fractal_FunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fractal_FunTests.swift; sourceTree = "<group>"; };
+		496F1687255B8A99009C2CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		496F168C255B8A99009C2CB3 /* Fractal FunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fractal FunUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		496F1690255B8A99009C2CB3 /* Fractal_FunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fractal_FunUITests.swift; sourceTree = "<group>"; };
+		496F1692255B8A99009C2CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		496F166D255B8A97009C2CB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496F167E255B8A99009C2CB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496F1689255B8A99009C2CB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		496F1667255B8A97009C2CB3 = {
+			isa = PBXGroup;
+			children = (
+				496F1672255B8A97009C2CB3 /* Fractal Fun */,
+				496F1684255B8A99009C2CB3 /* Fractal FunTests */,
+				496F168F255B8A99009C2CB3 /* Fractal FunUITests */,
+				496F1671255B8A97009C2CB3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		496F1671255B8A97009C2CB3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				496F1670255B8A97009C2CB3 /* Fractal Fun.app */,
+				496F1681255B8A99009C2CB3 /* Fractal FunTests.xctest */,
+				496F168C255B8A99009C2CB3 /* Fractal FunUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		496F1672255B8A97009C2CB3 /* Fractal Fun */ = {
+			isa = PBXGroup;
+			children = (
+				496F1673255B8A97009C2CB3 /* Fractal_FunApp.swift */,
+				496F1675255B8A97009C2CB3 /* ContentView.swift */,
+				496F1677255B8A98009C2CB3 /* Assets.xcassets */,
+				496F167C255B8A98009C2CB3 /* Info.plist */,
+				496F1679255B8A98009C2CB3 /* Preview Content */,
+			);
+			path = "Fractal Fun";
+			sourceTree = "<group>";
+		};
+		496F1679255B8A98009C2CB3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				496F167A255B8A98009C2CB3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		496F1684255B8A99009C2CB3 /* Fractal FunTests */ = {
+			isa = PBXGroup;
+			children = (
+				496F1685255B8A99009C2CB3 /* Fractal_FunTests.swift */,
+				496F1687255B8A99009C2CB3 /* Info.plist */,
+			);
+			path = "Fractal FunTests";
+			sourceTree = "<group>";
+		};
+		496F168F255B8A99009C2CB3 /* Fractal FunUITests */ = {
+			isa = PBXGroup;
+			children = (
+				496F1690255B8A99009C2CB3 /* Fractal_FunUITests.swift */,
+				496F1692255B8A99009C2CB3 /* Info.plist */,
+			);
+			path = "Fractal FunUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		496F166F255B8A97009C2CB3 /* Fractal Fun */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 496F1695255B8A99009C2CB3 /* Build configuration list for PBXNativeTarget "Fractal Fun" */;
+			buildPhases = (
+				496F166C255B8A97009C2CB3 /* Sources */,
+				496F166D255B8A97009C2CB3 /* Frameworks */,
+				496F166E255B8A97009C2CB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fractal Fun";
+			productName = "Fractal Fun";
+			productReference = 496F1670255B8A97009C2CB3 /* Fractal Fun.app */;
+			productType = "com.apple.product-type.application";
+		};
+		496F1680255B8A99009C2CB3 /* Fractal FunTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 496F1698255B8A99009C2CB3 /* Build configuration list for PBXNativeTarget "Fractal FunTests" */;
+			buildPhases = (
+				496F167D255B8A99009C2CB3 /* Sources */,
+				496F167E255B8A99009C2CB3 /* Frameworks */,
+				496F167F255B8A99009C2CB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				496F1683255B8A99009C2CB3 /* PBXTargetDependency */,
+			);
+			name = "Fractal FunTests";
+			productName = "Fractal FunTests";
+			productReference = 496F1681255B8A99009C2CB3 /* Fractal FunTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		496F168B255B8A99009C2CB3 /* Fractal FunUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 496F169B255B8A99009C2CB3 /* Build configuration list for PBXNativeTarget "Fractal FunUITests" */;
+			buildPhases = (
+				496F1688255B8A99009C2CB3 /* Sources */,
+				496F1689255B8A99009C2CB3 /* Frameworks */,
+				496F168A255B8A99009C2CB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				496F168E255B8A99009C2CB3 /* PBXTargetDependency */,
+			);
+			name = "Fractal FunUITests";
+			productName = "Fractal FunUITests";
+			productReference = 496F168C255B8A99009C2CB3 /* Fractal FunUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		496F1668255B8A97009C2CB3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					496F166F255B8A97009C2CB3 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					496F1680255B8A99009C2CB3 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 496F166F255B8A97009C2CB3;
+					};
+					496F168B255B8A99009C2CB3 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 496F166F255B8A97009C2CB3;
+					};
+				};
+			};
+			buildConfigurationList = 496F166B255B8A97009C2CB3 /* Build configuration list for PBXProject "Fractal Fun" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 496F1667255B8A97009C2CB3;
+			productRefGroup = 496F1671255B8A97009C2CB3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				496F166F255B8A97009C2CB3 /* Fractal Fun */,
+				496F1680255B8A99009C2CB3 /* Fractal FunTests */,
+				496F168B255B8A99009C2CB3 /* Fractal FunUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		496F166E255B8A97009C2CB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496F167B255B8A98009C2CB3 /* Preview Assets.xcassets in Resources */,
+				496F1678255B8A98009C2CB3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496F167F255B8A99009C2CB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496F168A255B8A99009C2CB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		496F166C255B8A97009C2CB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496F1676255B8A97009C2CB3 /* ContentView.swift in Sources */,
+				496F1674255B8A97009C2CB3 /* Fractal_FunApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496F167D255B8A99009C2CB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496F1686255B8A99009C2CB3 /* Fractal_FunTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496F1688255B8A99009C2CB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496F1691255B8A99009C2CB3 /* Fractal_FunUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		496F1683255B8A99009C2CB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 496F166F255B8A97009C2CB3 /* Fractal Fun */;
+			targetProxy = 496F1682255B8A99009C2CB3 /* PBXContainerItemProxy */;
+		};
+		496F168E255B8A99009C2CB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 496F166F255B8A97009C2CB3 /* Fractal Fun */;
+			targetProxy = 496F168D255B8A99009C2CB3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		496F1693255B8A99009C2CB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		496F1694255B8A99009C2CB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		496F1696255B8A99009C2CB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Fractal Fun/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Fractal Fun/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "FractalFun.Fractal-Fun";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		496F1697255B8A99009C2CB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Fractal Fun/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Fractal Fun/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "FractalFun.Fractal-Fun";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		496F1699255B8A99009C2CB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Fractal FunTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "FractalFun.Fractal-FunTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fractal Fun.app/Fractal Fun";
+			};
+			name = Debug;
+		};
+		496F169A255B8A99009C2CB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Fractal FunTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "FractalFun.Fractal-FunTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fractal Fun.app/Fractal Fun";
+			};
+			name = Release;
+		};
+		496F169C255B8A99009C2CB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Fractal FunUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "FractalFun.Fractal-FunUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fractal Fun";
+			};
+			name = Debug;
+		};
+		496F169D255B8A99009C2CB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Fractal FunUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "FractalFun.Fractal-FunUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fractal Fun";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		496F166B255B8A97009C2CB3 /* Build configuration list for PBXProject "Fractal Fun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				496F1693255B8A99009C2CB3 /* Debug */,
+				496F1694255B8A99009C2CB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		496F1695255B8A99009C2CB3 /* Build configuration list for PBXNativeTarget "Fractal Fun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				496F1696255B8A99009C2CB3 /* Debug */,
+				496F1697255B8A99009C2CB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		496F1698255B8A99009C2CB3 /* Build configuration list for PBXNativeTarget "Fractal FunTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				496F1699255B8A99009C2CB3 /* Debug */,
+				496F169A255B8A99009C2CB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		496F169B255B8A99009C2CB3 /* Build configuration list for PBXNativeTarget "Fractal FunUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				496F169C255B8A99009C2CB3 /* Debug */,
+				496F169D255B8A99009C2CB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 496F1668255B8A97009C2CB3 /* Project object */;
+}
