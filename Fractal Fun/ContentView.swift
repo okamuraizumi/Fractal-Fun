@@ -22,22 +22,22 @@ struct ContentView: View {
     @State var xNew=0.0
     @State var yNew=0.0
     
-    @State var my2DArray = Array(stride(from: -2.0, to: increment + 2.0, by: increment))
-    let zeroedArray = Array(repeating: 0, count: 7)
-        
+    @State var coordinates = [[(Double, Double)]]()
+    @State var newCoordinates = [(Double, Double)]()
+    @State var inSetCoordinate = [Bool]()
     var body: some View {
         VStack {
             Button(action: {self.alertIsVisible = true;
+                fillPointsArray(xLower: -2.0, xUpper: 2.0, xInNum: 5, yLower: -2.0, yUpper: 2.0, yInNum: 5)
                     x=getSliderOneValue();
                     y=getSliderTwoValue();
                     (xNew,yNew)=getUpdatedValues(x:x,y:y)
             }) {
-                Text("Push me")
+                Text("Press me")
             }
             .alert(isPresented: $alertIsVisible) {()-> Alert in
                 return Alert(title: Text("FRACTAL"),
-                             message: Text( "new x value is \(my2DArray)\n" +
-                                           "new y value is \(zeroedArray)\n" )
+                             message: Text( "new x value is ")
                 )
             }
             Slider(value: $sliderOneValue, in:-2.0...2.0)
@@ -55,6 +55,34 @@ struct ContentView: View {
     func getSliderTwoValue() ->Double{
         return sliderTwoValue
     }
+    func fillPointsArray(xLower:Double, xUpper:Double, xInNum:Int, yLower:Double, yUpper:Double, yInNum:Int) {
+        var xCoor:Double
+        var yCoor:Double
+        let xIncrement=(xUpper-xLower)/Double(xInNum-1)
+        let yIncrement=(yUpper-yLower)/Double(yInNum-1)
+        for indX in 0...xInNum-1 {
+            for indY in 0...yInNum-1{
+                xCoor=xLower+Double(indX)*xIncrement
+                yCoor=yLower+Double(indY)*yIncrement
+                coordinates.append([(xCoor,yCoor)])
+                newCoordinates.append((xCoor,yCoor))
+                inSetCoordinate.append(true)
+            }
+        }
+        
+    }
+    func updateCoordinates(){
+        var indexCoordinate:Int
+        var Xcoordinate:Double
+        var Ycoordinate:Double
+        var newXcoordinate:Double
+        var newYcoordinate:Double
+        var coordinate:[(Double,Double)]
+            for indexCoordinate in 0...newCoordinates.count-1{
+                coordinate = coordinates[(indexCoordinate)]
+                Xcoordinate=coordinate[0].0
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -69,5 +97,7 @@ func getUpdatedValues(x:Double,y:Double)-> (x_new:Double,y_new:Double) {
     return (x_new, y_new)
 
 }
+
+
 
 //func getChartPointArray(xMin:Double,xMax:Double,yMin:Double,yMax:Double,increment:Double)-> (Array<Array<Double>>){}
