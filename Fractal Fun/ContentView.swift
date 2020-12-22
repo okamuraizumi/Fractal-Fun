@@ -11,41 +11,62 @@ import SwiftUI
 var increment=1.0
 
 struct ContentView: View {
-    @State var sliderOneValue=0.0
+    @State var sliderOneValue=1.0
 
-    @State var sliderTwoValue=0.0
+    @State var sliderTwoValue=1.0
+    @State var sliderThreeValue=2.0
     
     @State var alertIsVisible=false
     
     @State var x=0.0
     @State var y=0.0
+    @State var numOfPoints=0
     @State var xNew=0.0
     @State var yNew=0.0
+    
     
     @State var coordinates = [[(Double, Double)]]()
     @State var newCoordinates = [(Double, Double)]()
     @State var inSetCoordinate = [Bool]()
+    
     var body: some View {
         VStack {
             Button(action: {self.alertIsVisible = true;
-                fillPointsArray(xLower: -2.0, xUpper: 2.0, xInNum: 5, yLower: -2.0, yUpper: 2.0, yInNum: 5)
                     x=getSliderOneValue();
                     y=getSliderTwoValue();
-                    (xNew,yNew)=getUpdatedValues(x:x,y:y)
+                    numOfPoints=getSliderThreeValue();
+                    coordinates = [[(Double, Double)]]();
+                    newCoordinates = [(Double, Double)]();
+                    inSetCoordinate = [Bool]();
+                    fillPointsArray(xLower: -x, xUpper: x, xInNum: numOfPoints, yLower: -y, yUpper: y, yInNum: numOfPoints);
             }) {
-                Text("Press me")
+                Text("Initialize")
             }
             .alert(isPresented: $alertIsVisible) {()-> Alert in
                 return Alert(title: Text("FRACTAL"),
-                             message: Text( "new x value is ")
+                             message: Text( "new x value is  \(x) \n" +
+                                            "new y value is  \(y) \n" +
+                                            "numOfPoints value is \(numOfPoints)")
                 )
             }
-            Slider(value: $sliderOneValue, in:-2.0...2.0)
-            Slider(value: $sliderTwoValue, in:-2.0...2.0)
-        Text("We <3 Math")
-            .padding()
+            
+            Button(action: {
+                    updateCoordinates();
+                    print(newCoordinates);
+                    print(inSetCoordinate);
+            }) {
+                Text("New Values")
+            }
+            
+            Slider(value: $sliderOneValue, in:1.0...3.0)
+            Slider(value: $sliderTwoValue, in:1.0...3.0)
+            Slider(value: $sliderThreeValue, in:2.0...10.0)
+            
+            Text("We <3 Math").padding();
+            Image("bcnp").padding(1);
             
         }
+        
     }
     func getSliderOneValue() ->Double{
         return sliderOneValue
@@ -54,6 +75,9 @@ struct ContentView: View {
     }
     func getSliderTwoValue() ->Double{
         return sliderTwoValue
+    }
+    func getSliderThreeValue() ->Int{
+        return Int(sliderThreeValue.rounded())
     }
     func fillPointsArray(xLower:Double, xUpper:Double, xInNum:Int, yLower:Double, yUpper:Double, yInNum:Int) {
         var xCoor:Double
@@ -72,15 +96,17 @@ struct ContentView: View {
         
     }
     func updateCoordinates(){
-        var indexCoordinate:Int
         var Xcoordinate:Double
         var Ycoordinate:Double
-        var newXcoordinate:Double
-        var newYcoordinate:Double
-        var coordinate:[(Double,Double)]
-            for indexCoordinate in 0...newCoordinates.count-1{
-                coordinate = coordinates[(indexCoordinate)]
-                Xcoordinate=coordinate[0].0
+        var coordinate:(Double,Double)
+        for indexCoordinate in 0...newCoordinates.count-1{
+            coordinate = newCoordinates[indexCoordinate];
+            Xcoordinate=coordinate.0;
+            Ycoordinate=coordinate.1;
+            newCoordinates[indexCoordinate]=getUpdatedValues(x:Xcoordinate, y:Ycoordinate);
+            if( (Xcoordinate*Xcoordinate + Ycoordinate*Ycoordinate) > 4 ){
+                inSetCoordinate[indexCoordinate]=false;
+            }
         }
     }
 }
