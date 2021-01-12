@@ -10,6 +10,42 @@ import SwiftUI
 
 var increment=1.0
 
+struct SpiroSquare: Shape {
+    
+    @State var coordinates = [(Double, Double)]();
+    @State var inSetCoordinate = [Bool]();
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+
+//        let rotations = 5
+//        let amount = .pi / CGFloat(rotations)
+//        let transform = CGAffineTransform(rotationAngle: amount)
+        
+        for i in 0...(inSetCoordinate.count-1){
+            getColor(pixelValue:inSetCoordinate[i]).set();
+            let coordinate = coordinates[i];
+            let Xcoordinate=coordinate.0;
+            let Ycoordinate=coordinate.1;
+            path.addRect(CGRect(x:CGFloat(Xcoordinate), y:CGFloat(Ycoordinate), width: rect.width, height: rect.height))
+        }
+
+//        for _ in 0 ..< rotations {
+//            path = path.applying(transform)
+//
+//            path.addRect(CGRect(x: -rect.width / 2, y: -rect.height / 2, width: rect.width, height: rect.height))
+//        }
+
+        return path
+    }
+
+    
+    func updatePoints(newInSetCoordinate:[Bool], newCoordinates:[(Double, Double)]){
+        inSetCoordinate = newInSetCoordinate;
+        coordinates = newCoordinates;
+    }
+}
+
 struct ContentView: View {
     @State var sliderOneValue=1.0
 
@@ -25,17 +61,25 @@ struct ContentView: View {
     @State var yNew=0.0
     
     
-    @State var coordinates = [[(Double, Double)]]()
+    @State var coordinates = [(Double, Double)]()
     @State var newCoordinates = [(Double, Double)]()
     @State var inSetCoordinate = [Bool]()
     
+    @State var spiroSquare=SpiroSquare()
+    
+    init(){
+        fillPointsArray(xLower: -2.0, xUpper: 2.0, xInNum: 5, yLower: -2.0, yUpper: 2.0, yInNum: 5)
+        spiroSquare.updatePoints(newInSetCoordinate:inSetCoordinate, newCoordinates:coordinates)
+    }
+    
     var body: some View {
+                
         VStack {
             Button(action: {self.alertIsVisible = true;
                     x=getSliderOneValue();
                     y=getSliderTwoValue();
                     numOfPoints=getSliderThreeValue();
-                    coordinates = [[(Double, Double)]]();
+                    coordinates = [(Double, Double)]();
                     newCoordinates = [(Double, Double)]();
                     inSetCoordinate = [Bool]();
                     fillPointsArray(xLower: -x, xUpper: x, xInNum: numOfPoints, yLower: -y, yUpper: y, yInNum: numOfPoints);
@@ -57,28 +101,32 @@ struct ContentView: View {
             }) {
                 Text("New Values")
             }
-            
+
             Slider(value: $sliderOneValue, in:1.0...3.0)
             Slider(value: $sliderTwoValue, in:1.0...3.0)
             Slider(value: $sliderThreeValue, in:2.0...10.0)
             
             Text("We <3 Math").padding();
             Image("bcnp").padding(1);
+            spiroSquare
+                .stroke()
+                .frame(width: 200, height: 200)
             
         }
-        
     }
+    
     func getSliderOneValue() ->Double{
-        return sliderOneValue
-        
-        
+        return sliderOneValue;
     }
+    
     func getSliderTwoValue() ->Double{
-        return sliderTwoValue
+        return sliderTwoValue;
     }
+    
     func getSliderThreeValue() ->Int{
-        return Int(sliderThreeValue.rounded())
+        return Int(sliderThreeValue.rounded());
     }
+    
     func fillPointsArray(xLower:Double, xUpper:Double, xInNum:Int, yLower:Double, yUpper:Double, yInNum:Int) {
         var xCoor:Double
         var yCoor:Double
@@ -88,7 +136,7 @@ struct ContentView: View {
             for indY in 0...yInNum-1{
                 xCoor=xLower+Double(indX)*xIncrement
                 yCoor=yLower+Double(indY)*yIncrement
-                coordinates.append([(xCoor,yCoor)])
+                coordinates.append((xCoor,yCoor))
                 newCoordinates.append((xCoor,yCoor))
                 inSetCoordinate.append(true)
             }
@@ -109,6 +157,7 @@ struct ContentView: View {
             }
         }
     }
+        
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -125,5 +174,13 @@ func getUpdatedValues(x:Double,y:Double)-> (x_new:Double,y_new:Double) {
 }
 
 
+func getColor (pixelValue:Bool) -> UIColor{
+    if (pixelValue){
+        return .black
+    }
+    else{
+        return .white
+    }
+}
 
 //func getChartPointArray(xMin:Double,xMax:Double,yMin:Double,yMax:Double,increment:Double)-> (Array<Array<Double>>){}
