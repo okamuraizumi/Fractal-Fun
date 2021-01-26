@@ -38,11 +38,16 @@ struct SpiroSquare: Shape {
 
         return path
     }
+}
 
+class SpiroInfo {
+    
+    @State var coordinates = [(Double, Double)]();
+    @State var inSetCoordinate = [Bool]();
     
     func updatePoints(newInSetCoordinate:[Bool], newCoordinates:[(Double, Double)]){
-        inSetCoordinate = newInSetCoordinate;
-        coordinates = newCoordinates;
+        _inSetCoordinate = State(initialValue: newInSetCoordinate);
+        _coordinates = State(initialValue: newCoordinates);
     }
 }
 
@@ -65,7 +70,7 @@ struct ContentView: View {
     @State var newCoordinates = [(Double, Double)]()
     @State var inSetCoordinate = [Bool]()
     
-    @State var spiroSquare=SpiroSquare()
+    var spiroSquare=SpiroInfo()
     
     init(){
         fillPointsArray(xLower: -2.0, xUpper: 2.0, xInNum: 5, yLower: -2.0, yUpper: 2.0, yInNum: 5)
@@ -83,6 +88,7 @@ struct ContentView: View {
                     newCoordinates = [(Double, Double)]();
                     inSetCoordinate = [Bool]();
                     fillPointsArray(xLower: -x, xUpper: x, xInNum: numOfPoints, yLower: -y, yUpper: y, yInNum: numOfPoints);
+                
             }) {
                 Text("Initialize")
             }
@@ -107,10 +113,10 @@ struct ContentView: View {
             Slider(value: $sliderThreeValue, in:2.0...10.0)
             
             Text("We <3 Math").padding();
-            Image("bcnp").padding(1);
-            spiroSquare
-                .stroke()
-                .frame(width: 200, height: 200)
+           
+            //spiroSquare
+                //.stroke()
+               // .frame(width: 200, height: 200)
             
         }
     }

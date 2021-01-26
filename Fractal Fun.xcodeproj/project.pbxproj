@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		20116DE32591A68300204D7A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20116DE22591A68300204D7A /* ImageView.swift */; };
-		20116DED2591A76400204D7A /* bcnp.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 20116DEC2591A76400204D7A /* bcnp.jpeg */; };
 		496F1674255B8A97009C2CB3 /* Fractal_FunApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F1673255B8A97009C2CB3 /* Fractal_FunApp.swift */; };
 		496F1676255B8A97009C2CB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F1675255B8A97009C2CB3 /* ContentView.swift */; };
 		496F1678255B8A98009C2CB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496F1677255B8A98009C2CB3 /* Assets.xcassets */; };
@@ -36,7 +35,6 @@
 
 /* Begin PBXFileReference section */
 		20116DE22591A68300204D7A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
-		20116DEC2591A76400204D7A /* bcnp.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bcnp.jpeg; path = ../../../Downloads/bcnp.jpeg; sourceTree = "<group>"; };
 		496F1670255B8A97009C2CB3 /* Fractal Fun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fractal Fun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		496F1673255B8A97009C2CB3 /* Fractal_FunApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fractal_FunApp.swift; sourceTree = "<group>"; };
 		496F1675255B8A97009C2CB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 		496F1672255B8A97009C2CB3 /* Fractal Fun */ = {
 			isa = PBXGroup;
 			children = (
-				20116DEC2591A76400204D7A /* bcnp.jpeg */,
 				496F1673255B8A97009C2CB3 /* Fractal_FunApp.swift */,
 				496F1675255B8A97009C2CB3 /* ContentView.swift */,
 				20116DE22591A68300204D7A /* ImageView.swift */,
@@ -239,7 +236,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20116DED2591A76400204D7A /* bcnp.jpeg in Resources */,
 				496F167B255B8A98009C2CB3 /* Preview Assets.xcassets in Resources */,
 				496F1678255B8A98009C2CB3 /* Assets.xcassets in Resources */,
 			);
