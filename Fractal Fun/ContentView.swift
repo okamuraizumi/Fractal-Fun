@@ -12,8 +12,13 @@ var increment=1.0
 
 struct SpiroSquare: Shape {
     
-    @State var coordinates = [(Double, Double)]();
-    @State var inSetCoordinate = [Bool]();
+    var coordinates = [(-2.0,2.0), (0.0,2.0), (2.0,2.0), (-2.0,0.0), (0.0,0.0), (2.0,0.0), (-2.0,-2.0), (0.0,-2.0), (2.0,-2.0)];
+    var inSetCoordinate = [false,true,true,true,true,true,true,true,false];
+    
+    mutating func updatePoints(_ newInSetCoordinate:[Bool], _ newCoordinates:[(Double, Double)]){
+        inSetCoordinate =  newInSetCoordinate;
+        coordinates = newCoordinates;
+    }
     
     func path(in rect: CGRect) -> Path {
         var path = Path()
@@ -25,9 +30,10 @@ struct SpiroSquare: Shape {
         for i in 0...(inSetCoordinate.count-1){
             getColor(pixelValue:inSetCoordinate[i]).set();
             let coordinate = coordinates[i];
-            let Xcoordinate=coordinate.0;
-            let Ycoordinate=coordinate.1;
-            path.addRect(CGRect(x:CGFloat(Xcoordinate), y:CGFloat(Ycoordinate), width: rect.width, height: rect.height))
+            let Xcoordinate=coordinate.0*20;
+            let Ycoordinate=coordinate.1*20;
+            path.addRect(CGRect(x:CGFloat(Xcoordinate), y:CGFloat(Ycoordinate), width: 20, height: 20))
+        
         }
 
 //        for _ in 0 ..< rotations {
@@ -41,14 +47,15 @@ struct SpiroSquare: Shape {
 }
 
 class SpiroInfo {
+    var spiroSquare = SpiroSquare()
     
-    @State var coordinates = [(Double, Double)]();
-    @State var inSetCoordinate = [Bool]();
-    
-    func updatePoints(newInSetCoordinate:[Bool], newCoordinates:[(Double, Double)]){
-        _inSetCoordinate = State(initialValue: newInSetCoordinate);
-        _coordinates = State(initialValue: newCoordinates);
-    }
+//    //@State var coordinates = [(Double, Double)]();
+//    //@State var inSetCoordinate = [Bool]();
+//
+//    //func updatePoints(newInSetCoordinate:[Bool], newCoordinates:[(Double, Double)]){
+//        _//inSetCoordinate = State(initialValue: newInSetCoordinate);
+//        _//coordinates = State(initialValue: newCoordinates);
+////    }
 }
 
 struct ContentView: View {
@@ -70,15 +77,16 @@ struct ContentView: View {
     @State var newCoordinates = [(Double, Double)]()
     @State var inSetCoordinate = [Bool]()
     
-    var spiroSquare=SpiroInfo()
+    @State var spiroSquare=SpiroInfo()
     
     init(){
         fillPointsArray(xLower: -2.0, xUpper: 2.0, xInNum: 5, yLower: -2.0, yUpper: 2.0, yInNum: 5)
-        spiroSquare.updatePoints(newInSetCoordinate:inSetCoordinate, newCoordinates:coordinates)
+        
     }
     
     var body: some View {
                 
+        
         VStack {
             Button(action: {self.alertIsVisible = true;
                     x=getSliderOneValue();
@@ -102,6 +110,9 @@ struct ContentView: View {
             
             Button(action: {
                     updateCoordinates();
+                spiroSquare.spiroSquare.updatePoints(inSetCoordinate, newCoordinates)
+//                self.view
+//                self.viewToReload.layoutIfNeeded()
                     print(newCoordinates);
                     print(inSetCoordinate);
             }) {
@@ -112,11 +123,11 @@ struct ContentView: View {
             Slider(value: $sliderTwoValue, in:1.0...3.0)
             Slider(value: $sliderThreeValue, in:2.0...10.0)
             
-            Text("We <3 Math").padding();
+            Text("We <3 Math\(numOfPoints)").padding();
            
-            //spiroSquare
-                //.stroke()
-               // .frame(width: 200, height: 200)
+            spiroSquare.spiroSquare
+                .stroke()
+                .frame(width: 200, height: 200)
             
         }
     }
@@ -182,10 +193,10 @@ func getUpdatedValues(x:Double,y:Double)-> (x_new:Double,y_new:Double) {
 
 func getColor (pixelValue:Bool) -> UIColor{
     if (pixelValue){
-        return .black
+        return .blue
     }
     else{
-        return .white
+        return .red
     }
 }
 
