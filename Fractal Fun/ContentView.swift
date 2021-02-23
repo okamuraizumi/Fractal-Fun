@@ -10,44 +10,53 @@ import SwiftUI
 
 var increment=1.0
 
-struct SpiroSquare: Shape {
+struct Square: Shape {
     
-    var coordinates = [(-2.0,2.0), (0.0,2.0), (2.0,2.0), (-2.0,0.0), (0.0,0.0), (2.0,0.0), (-2.0,-2.0), (0.0,-2.0), (2.0,-2.0)];
-    var inSetCoordinate = [false,true,true,true,true,true,true,true,false];
-    
-    mutating func updatePoints(_ newInSetCoordinate:[Bool], _ newCoordinates:[(Double, Double)]){
-        inSetCoordinate =  newInSetCoordinate;
-        coordinates = newCoordinates;
-    }
-    
+    var coordinate: (Double,Double)
+    var scale: CGFloat
+    var color: Color
+    //var inSetCoordinate = [false,true,true,true,true,true,true,true,false];
+//
+//    mutating func updatePoints(_ newInSetCoordinate:[Bool], _ newCoordinates:[(Double, Double)]){
+//        inSetCoordinate =  newInSetCoordinate;
+//        coordinates = newCoordinates;
+//    }
+//
     func path(in rect: CGRect) -> Path {
         var path = Path()
-
-//        let rotations = 5
-//        let amount = .pi / CGFloat(rotations)
-//        let transform = CGAffineTransform(rotationAngle: amount)
-        
-        for i in 0...(inSetCoordinate.count-1){
-            getColor(pixelValue:inSetCoordinate[i]).set();
-            let coordinate = coordinates[i];
-            let Xcoordinate=coordinate.0*20;
-            let Ycoordinate=coordinate.1*20;
-            path.addRect(CGRect(x:CGFloat(Xcoordinate), y:CGFloat(Ycoordinate), width: 20, height: 20))
-        
-        }
-
-//        for _ in 0 ..< rotations {
-//            path = path.applying(transform)
+        let Xcoordinate=coordinate.0;
+        let Ycoordinate=coordinate.1;
+        let rectangle=CGRect(x:CGFloat(Xcoordinate), y:CGFloat(Ycoordinate), width: scale, height: scale);
+        path.addRect(rectangle);
+     
+////        let rotations = 5
+////        let amount = .pi / CGFloat(rotations)
+////        let transform = CGAffineTransform(rotationAngle: amount)
 //
-//            path.addRect(CGRect(x: -rect.width / 2, y: -rect.height / 2, width: rect.width, height: rect.height))
+//        for i in 0...(inSetCoordinate.count-1){
+//            let color=getColor(pixelValue:inSetCoordinate[i]);
+//            color.set();
+//            let coordinate = coordinates[i];
+//            let Xcoordinate=coordinate.0*20;
+//            let Ycoordinate=coordinate.1*20;
+//            let rectangle=CGRect(x:CGFloat(Xcoordinate), y:CGFloat(Ycoordinate), width: 20, height: 20);
+//            path.addRect(rectangle);
+//
 //        }
-
+//
+////        for _ in 0 ..< rotations {
+////            path = path.applying(transform)
+////
+////            path.addRect(CGRect(x: -rect.width / 2, y: -rect.height / 2, width: rect.width, height: rect.height))
+////        }
+//
         return path
     }
+
 }
 
-class SpiroInfo {
-    var spiroSquare = SpiroSquare()
+class BagOSquares {
+    var square = Square(coordinate: (0,0),scale: 100, color: .red);
     
 //    //@State var coordinates = [(Double, Double)]();
 //    //@State var inSetCoordinate = [Bool]();
@@ -77,7 +86,7 @@ struct ContentView: View {
     @State var newCoordinates = [(Double, Double)]()
     @State var inSetCoordinate = [Bool]()
     
-    @State var spiroSquare=SpiroInfo()
+    @State var bagOSquares=BagOSquares()
     
     init(){
         fillPointsArray(xLower: -2.0, xUpper: 2.0, xInNum: 5, yLower: -2.0, yUpper: 2.0, yInNum: 5)
@@ -110,7 +119,7 @@ struct ContentView: View {
             
             Button(action: {
                     updateCoordinates();
-                spiroSquare.spiroSquare.updatePoints(inSetCoordinate, newCoordinates)
+//                spiroSquare.spiroSquare.updatePoints(inSetCoordinate, newCoordinates)
 //                self.view
 //                self.viewToReload.layoutIfNeeded()
                     print(newCoordinates);
@@ -125,9 +134,10 @@ struct ContentView: View {
             
             Text("We <3 Math\(numOfPoints)").padding();
            
-            spiroSquare.spiroSquare
-                .stroke()
-                .frame(width: 200, height: 200)
+           bagOSquares.square
+                //.stroke()
+            .fill(bagOSquares.square.color)
+            .frame(width: 200, height: 200)
             
         }
     }
