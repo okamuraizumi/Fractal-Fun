@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-var increment=1.0
+//var increment=1.0
 
 struct Square: Shape {
     
@@ -52,12 +52,35 @@ struct Square: Shape {
 //
         return path
     }
-
+    
 }
 
-class BagOSquares {
-    var square = Square(coordinate: (0,0),scale: 100, color: .red);
+
+struct BagOSquares: View {
+    var scale: CGFloat = 50
+    var rows: [GridItem] =
+        Array(repeating: .init(.flexible(minimum: 50), spacing: 0.0, alignment: .topLeading), count: 3)
+    var body: some View {
+        let square = Square(coordinate: (0,0), scale: scale, color: .red);
+        let square2 = Square(coordinate: (0,0), scale: scale, color: .blue);
+        let square3 = Square(coordinate: (0,0),scale: scale, color: .purple);
+        let square4 = Square(coordinate: (0,0), scale: scale, color: .yellow);
+        let square5 = Square(coordinate: (0,0),scale: scale, color: .green);
+        let square6 = Square(coordinate: (0,0), scale: scale, color: .black);
+        LazyVGrid(columns: rows, alignment: .leading, spacing: 0.0 ) {
+        
+            square.fill(square.color).padding(0.0)
+            square2.fill(square2.color).padding(0.0)
+            square3.fill(square3.color).padding(0.0)
+            square4.fill(square4.color).padding(0.0)
+            square5.fill(square5.color).padding(0.0)
+            square6.fill(square6.color).padding(0.0)
+        }
     
+    
+    }
+    
+   
 //    //@State var coordinates = [(Double, Double)]();
 //    //@State var inSetCoordinate = [Bool]();
 //
@@ -96,7 +119,7 @@ struct ContentView: View {
     var body: some View {
                 
         
-        VStack {
+        VStack() {
             Button(action: {self.alertIsVisible = true;
                     x=getSliderOneValue();
                     y=getSliderTwoValue();
@@ -133,13 +156,23 @@ struct ContentView: View {
             Slider(value: $sliderThreeValue, in:2.0...10.0)
             
             Text("We <3 Math\(numOfPoints)").padding();
-           
-           bagOSquares.square
-                //.stroke()
-            .fill(bagOSquares.square.color)
-            .frame(width: 200, height: 200)
             
+            bagOSquares.frame(width:50, height: 50)
+            
+//            bagOSquares.square
+//                 //.stroke()
+//                .fill(bagOSquares.s               quare.color)
+//
+//
+//
+//             bagOSquares.square2
+//                  //.stroke()
+//              .fill(bagOSquares.square2.color)
+              
+              
+        
         }
+       
     }
     
     func getSliderOneValue() ->Double{
@@ -211,3 +244,4 @@ func getColor (pixelValue:Bool) -> UIColor{
 }
 
 //func getChartPointArray(xMin:Double,xMax:Double,yMin:Double,yMax:Double,increment:Double)-> (Array<Array<Double>>){}
+
