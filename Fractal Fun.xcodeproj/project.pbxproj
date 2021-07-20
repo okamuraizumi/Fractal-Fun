@@ -14,6 +14,8 @@
 		496F167B255B8A98009C2CB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496F167A255B8A98009C2CB3 /* Preview Assets.xcassets */; };
 		496F1686255B8A99009C2CB3 /* Fractal_FunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F1685255B8A99009C2CB3 /* Fractal_FunTests.swift */; };
 		496F1691255B8A99009C2CB3 /* Fractal_FunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F1690255B8A99009C2CB3 /* Fractal_FunUITests.swift */; };
+		49D83E3326A64EAF00FA8C42 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D83E3126A64EAF00FA8C42 /* ImageManager.swift */; };
+		49D83E3426A64EAF00FA8C42 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D83E3226A64EAF00FA8C42 /* ColorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		496F168C255B8A99009C2CB3 /* Fractal FunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fractal FunUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		496F1690255B8A99009C2CB3 /* Fractal_FunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fractal_FunUITests.swift; sourceTree = "<group>"; };
 		496F1692255B8A99009C2CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49D83E3126A64EAF00FA8C42 /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		49D83E3226A64EAF00FA8C42 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		496F1672255B8A97009C2CB3 /* Fractal Fun */ = {
 			isa = PBXGroup;
 			children = (
+				49D83E3226A64EAF00FA8C42 /* ColorManager.swift */,
+				49D83E3126A64EAF00FA8C42 /* ImageManager.swift */,
 				496F1673255B8A97009C2CB3 /* Fractal_FunApp.swift */,
 				496F1675255B8A97009C2CB3 /* ContentView.swift */,
 				20116DE22591A68300204D7A /* ImageView.swift */,
@@ -263,8 +269,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				20116DE32591A68300204D7A /* ImageView.swift in Sources */,
+				49D83E3426A64EAF00FA8C42 /* ColorManager.swift in Sources */,
 				496F1676255B8A97009C2CB3 /* ContentView.swift in Sources */,
 				496F1674255B8A97009C2CB3 /* Fractal_FunApp.swift in Sources */,
+				49D83E3326A64EAF00FA8C42 /* ImageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,8 +19,10 @@ class FractalImage {
     var newCoordinates = [(Double, Double)]();
     var inSetCoordinate = [Bool]();
     var colorCoordinates = [UInt32]();
+    var count = 0;
+
     
-    init(height:Int=100, width:Int=100, xRange:(Double,Double)=(-2, 2), yRange:(Double,Double)=(-2,2)){
+    init(height:Int=500, width:Int=500, xRange:(Double,Double)=(-2, 2), yRange:(Double,Double)=(-2,2)){
         self.height = height;
         self.width = width;
         self.xRange = xRange;
@@ -81,7 +83,18 @@ class FractalImage {
         var newPoints:(Double,Double)
         var newXcoordinate:Double
         var newYcoordinate:Double
+        var currentColor: UInt32
+        if (count==0){
+            currentColor=0xFFfcba03;
+        }
+        else {
+            currentColor=0xFF3464eb;
+        }
+        count = (count + 1) % 2;
         for indexCoordinate in 0...newCoordinates.count-1{
+            if (inSetCoordinate[indexCoordinate] == false) {
+                continue
+            };
            newCoordinate = newCoordinates[indexCoordinate];
            coordinate = coordinates[indexCoordinate];
             Xcoordinate=newCoordinate.0;
@@ -92,7 +105,7 @@ class FractalImage {
             newCoordinates[indexCoordinate]=(newXcoordinate,newYcoordinate);
             if( (newXcoordinate*newXcoordinate + newYcoordinate*newYcoordinate) > 4 ){
                 inSetCoordinate[indexCoordinate]=false;
-                colorCoordinates[indexCoordinate]=0xFFfcba03;
+                colorCoordinates[indexCoordinate]=currentColor;
             }
         }
     }
